@@ -1,4 +1,4 @@
-/*
+﻿/*
  * This file is part of the TrinityCore Project. See AUTHORS file for Copyright information
  *
  * This program is free software; you can redistribute it and/or modify it
@@ -233,6 +233,7 @@ class DatabaseWorkerPool
         std::array<std::vector<std::unique_ptr<T>>, IDX_SIZE> _connections;
         std::unique_ptr<MySQLConnectionInfo> _connectionInfo;
         std::vector<uint8> _preparedStatementSize;
+        // _async_threads 异步线程的个数， _synch_threads 同步线程的个数
         uint8 _async_threads, _synch_threads;
 #ifdef TRINITY_DEBUG
         static inline thread_local bool _warnSyncQueries = false;
